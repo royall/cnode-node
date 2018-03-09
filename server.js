@@ -17,15 +17,50 @@ const sendNotFound = function (res) {
     res.end();
 };
 
+const reg=/(\/[a-zA-Z0-9]+\/?)+:[a-zA-Z0-9]+/g;
+let newRouter={};
+for(let route in router){
+    reg.lastIndex=0;
+    if(router.hasOwnProperty(route)){
+        let newKey=route,
+            flag=false;
+        if(reg.test(route)){
+            newKey = route.split(':')[0] + '[a-zA-Z0-9]+[^\/]';
+            flag = true;
+        }
+        newRouter['^'+newKey.replace(/\//g,'\\/')+'$']={
+            flag:flag,
+            handler:router[route]
+        };
+    }
+}
+
 const server = http.createServer((req, res) => {
     const reqUrl = req.url;
     const pathname = url.parse(reqUrl).pathname;
-    let handler = router[pathname];
-    if (handler) {
-        typeof handler === 'function' && handler(req, res);
-    } else {
-        let ext = path.parse(reqUrl).ext;
-        let realPath = assetsPath + reqUrl;
+    let flag=false;
+    //搜索匹配路由
+    for(let route in newRouter){
+        if(newRouter.hasOwnProperty(route)){
+            let reg=new RegExp(route);
+            if(pathname.match(reg)){
+                console.log('match');
+                let handler = newRouter[route].handler;
+                let param;
+                if(newRouter[route].flag){
+                    param=pathname.substr(pathname.lastIndexOf('/')+1)
+                }
+                typeof handler === 'function' && handler(req, res,param);
+                flag=true;
+                break;
+            }
+        }
+    }
+
+    if (!flag){
+        let pathname=url.parse(reqUrl).pathname;
+        let ext = path.parse(pathname).ext;
+        let realPath = assetsPath + pathname;
         fs.stat(realPath, (err, stat) => {
             if (!err) {
                 if (stat.isFile()) {

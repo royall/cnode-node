@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- meta -->
+    <meta charset="utf-8"/>
+    <meta name='description' content='CNode：Node.js专业中文社区'>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="nodejs, node, express, connect, socket.io"/>
+    <!-- see http://smerity.com/articles/2013/where_did_all_the_http_referrers_go.html -->
+    <meta name="referrer" content="always">
+
+
+    <meta name="author" content="EDP@TaoBao"/>
+
+    <meta property="wb:webmaster" content="617be6bd946c6b96"/>
+
+
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="/rss"/>
+
+
+    <link rel="icon" href="//o4j806krb.qnssl.com/public/images/cnode_icon_32.png" type="image/x-icon"/>
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="/css/index.css" media="all"/>
+
+
+    <!-- scripts -->
+    <script src="/script/index.min.js"></script>
+
+    <!-- scripts -->
+    <script src="/script/common.js"></script>
+
+
+    <title><%= data.title %> - CNode技术社区</title>
+
+    <meta content="_csrf" name="csrf-param">
+    <meta content="AyOpcK5T-Pv4In6unDF1BgPPvJc1Q4gmzvW8" name="csrf-token">
+</head>
+<body>
+<!-- navbar -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">
+
+                <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg">
+
+            </a>
+
+            <form id="search_form" class="navbar-search" action="/search">
+                <input type="text" id="q" name="q" class="search-query span3" value="">
+            </form>
+            <ul class="nav pull-right">
+                <li><a href="/">首页</a></li>
+
+                <li><a href="/getstart">新手入门</a></li>
+                <li><a href="/api">API</a></li>
+
+                <li><a href="/about" target="">关于</a></li>
+
+
+                <li><a href="/signup">注册</a></li>
+                <li><a href="/signin">登录</a></li>
+
+            </ul>
+            <a class="btn btn-navbar" id="responsive-sidebar-trigger">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div id="sidebar">
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">作者</span>
+            </div>
+            <div class="inner">
+                <div class="user_card">
+                    <div>
+                        <a class="user_avatar" href="/user/JZLeung">
+                            <img src="https://avatars2.githubusercontent.com/u/7995232?v=4&amp;s=120" title="JZLeung">
+                        </a>
+                        <span class="user_name"><a class="dark" href="/user/JZLeung">JZLeung</a></span>
+
+                        <div class="board clearfix">
+                            <div class="floor">
+                                <span class="big">积分: 295 </span>
+                            </div>
+                        </div>
+                        <div class="space clearfix"></div>
+                        <span class="signature">
+        “
+
+            东莞 · 广东 · 小前端
+
+        ”
+    </span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="panel">
+            <div class="inner ads">
+
+
+
+                <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&amp;utm_medium=content_pic_pc&amp;utm_campaign=multicloud&amp;utm_content=gift&amp;ytag=cnodejs" target="_blank" class="banner sponsor_outlink" data-label="ucloud-banner">
+                    <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+                </a>
+
+
+                <div class="sep10"></div>
+
+                <a href="https://0x7.me/UDyj" target="_blank" class="banner sponsor_outlink" data-label="qiniu-sidebar">
+                    <img src="//dn-cnode.qbox.me/Fv9R31Y6ySKKJi95ldk9TRkJ7o5O">
+                </a>
+
+
+                <div class="sep10"></div>
+
+                <a href="https://www.aliyun.com/product/nodejs?ref=cnode" target="_blank" class="banner sponsor_outlink" data-label="alinode">
+                    <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+                </a>
+
+
+                <div class="sep10"></div>
+
+                <a href="https://render.alipay.com/p/s/taobaonpm_click/image_click_25" target="_blank" class="banner sponsor_outlink" data-label="aliyun">
+                    <img src="//dn-cnode.qbox.me/Fu6b5DIbI_Va2i5oFjIByRGizFuP">
+                </a>
+
+            </div>
+        </div>
+
+
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">作者其它话题</span>
+            </div>
+            <div class="inner">
+
+                <ul class="unstyled">
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5a7bb53999ef9fac6b2e6831" title="初尝 Nuxt.js 使用 CNode 的API 弄了个简单的 demo 。">初尝 Nuxt.js 使用 CNode 的API 弄了个简单的 demo 。</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5a1fd5f7110a338547d6e34d" title="求教，如何实现一个节点树列表的条纹控制？">求教，如何实现一个节点树列表的条纹控制？</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/597afd53e72077ff35fbbe1e" title="vue-cnode-md 一个小小的练手项目vue2+vuex">vue-cnode-md 一个小小的练手项目vue2+vuex</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/58144f81cf18d0333412d2bf" title="vue 如何和 nodejs 前后端结合？">vue 如何和 nodejs 前后端结合？</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5a0c140e310be7561d4c04b3" title="怎么爬取动态生成的网页？">怎么爬取动态生成的网页？</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">无人回复的话题</span>
+            </div>
+            <div class="inner">
+
+                <ul class="unstyled">
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5aa24580f5dfc27d7ad98675" title="部署阿里的这个 rap2 后端服务的时候，经常遇到后端挂。 请问这个用 pm2 如何部署？">部署阿里的这个 rap2 后端服务的时候，经常遇到后端挂。 请问这个用 pm2 如何部署？</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5aa23ee5f5dfc27d7ad98674" title="NODE_ENV">NODE_ENV</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5aa22c137811af0f6522229b" title="聊一聊 URI Encode">聊一聊 URI Encode</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5aa2104f7811af0f6522228a" title="nodejs Net模块之socket建立连接">nodejs Net模块之socket建立连接</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a class="dark topic_title" href="/topic/5aa15e6619b2e3db18959c12" title="关于windows的问题 NetStat -ano |findstr 查看端口占用">关于windows的问题 NetStat -ano |findstr 查看端口占用</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="panel">
+            <div class="header topic_header">
+      <span class="topic_full_title">
+
+
+
+
+        <%= data.title %>
+      </span>
+                <div class="changes">
+        <span>
+          发布于 <%= data.create_at %>
+        </span>
+                    <span>
+          作者 <a href="/user/<%= data.author.loginname %>"><%= data.author.loginname %></a>
+        </span>
+                    <span>
+          <%= data.visit_count %> 次浏览
+        </span>
+
+
+                    <span> 来自 <%= data.tab %></span>
+
+
+
+
+                </div>
+
+            </div>
+            <div class="inner topic">
+
+                <div class="topic_content">
+                    <%- data.content %>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade"><%= data.replies.length %> 回复</span>
+            </div>
+            <% for(let i=0;i<data.replies.length;i++){ %>
+            <div class="cell reply_area reply_item
+  " reply_id="<%= data.replies[i].id %>" reply_to_id="<%= data.replies[i].reply_id %>" id="<%= data.replies[i].id %>">
+                <div class="author_content">
+                    <a href="/user/<%= data.replies[i].author.loginname %>" class="user_avatar">
+                        <img src="<%= data.replies[i].author.avatar_url %>" title="<%= data.replies[i].author.loginname %>"></a>
+
+                    <div class="user_info">
+                        <a class="dark reply_author" href="/user/<%= data.replies[i].author.loginname %>"><%= data.replies[i].author.loginname %></a>
+                        <a class="reply_time" href="#<%= data.replies[i].id %>"><%= i+1 %>楼•<%= data.replies[i].create_at %></a>
+
+                    </div>
+                    <div class="user_action">
+      <span>
+        <i class="fa up_btn
+          fa-thumbs-o-up
+          invisible" title="喜欢"></i>
+        <span class="up-count">
+
+        </span>
+      </span>
+
+                        <span>
+
+      </span>
+                    </div>
+                </div>
+                <div class="reply_content from-zgc19951206">
+                    <%- data.replies[i].content %>
+                </div>
+                <div class="clearfix">
+                    <div class="reply2_area">
+
+                    </div>
+                </div>
+            </div>
+            <%} %>
+        </div>
+
+
+    </div>
+
+    <div class="replies_history" style="display: none;">
+        <div class="inner_content"></div>
+        <div class="anchor"></div>
+    </div>
+
+    <!-- 预览模态对话框 -->
+    <div class="modal fade" id="preview-modal">
+        <div class="modal-body" style="max-height: initial;">
+            <img src="" alt="点击内容或者外部自动关闭图片预览" id="preview-image">
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+            var timer = null; //对话框延时定时器
+            // 初始化 $('.replies_history')
+            var $repliesHistory = $('.replies_history');
+            var $repliesHistoryContent = $repliesHistory.find('.inner_content');
+            $repliesHistory.hide();
+            // END
+            // 鼠标移入对话框清除隐藏定时器；移出时隐藏对话框
+            $repliesHistory.on('mouseenter', function(){
+                clearTimeout(timer);
+            }).on('mouseleave', function(){
+                $repliesHistory.fadeOut('fast');
+            });
+            // 显示被 at 用户的本页评论
+            if ($('.reply2_item').length === 0) {
+                // 只在流式评论布局中使用
+
+                $('#content').on('mouseenter', '.reply_content a', function (e) {
+                    clearTimeout(timer);
+                    var $this = $(this);
+                    if ($this.text()[0] === '@') {
+                        var thisText = $this.text().trim();
+                        var loginname = thisText.slice(1);
+                        var offset = $this.offset();
+                        var width = $this.width();
+                        var mainOffset = $('#main').offset();
+                        $repliesHistory.css('left', offset.left-mainOffset.left+width+10); // magic number
+                        $repliesHistory.css('top', offset.top-mainOffset.top-10); // magic number
+                        $repliesHistory.css({
+                            'z-index': 1,
+                        });
+                        $repliesHistoryContent.empty();
+                        var chats = [];
+                        var replyToId = $this.closest('.reply_item').attr('reply_to_id');
+                        while (replyToId) {
+                            var $replyItem = $('.reply_item[reply_id=' + replyToId + ']');
+                            var replyContent = $replyItem.find('.reply_content').text().trim();
+                            if (replyContent.length > 0) {
+                                chats.push([
+                                    $($replyItem.find('.user_avatar').html()).attr({
+                                        height: '30px',
+                                        width: '30px',
+                                    }), // avatar
+                                    (replyContent.length>300?replyContent.substr(0,300)+'...':replyContent), // reply content
+                                    '<a href="#'+replyToId+'" class="scroll_to_original" title="查看原文">↑</a>'
+                                ]);
+                            }
+                            replyToId = $replyItem.attr('reply_to_id');
+                        }
+                        if(chats.length > 0) {
+                            chats.reverse();
+
+                            $repliesHistoryContent.append('<div class="title">查看对话</div>');
+                            chats.forEach(function (pair, idx) {
+                                var $chat = $repliesHistoryContent.append('<div class="item"></div>');
+                                $chat.append(pair[0]); // 头像
+                                $chat.append($('<span>').text(pair[1])); // 内容
+                                $chat.append(pair[2]); // 查看原文 anchor
+                            });
+                            $repliesHistory.fadeIn('fast');
+                        }else{
+                            $repliesHistory.hide();
+                        }
+                    }
+                }).on('mouseleave', '.reply_content a', function (e) {
+                    timer = setTimeout(function(){
+                        $repliesHistory.fadeOut('fast');
+                    }, 500);
+                });
+            }
+            // END 显示被 at 用户的本页评论
+        })();
+
+        // 点赞
+        $('.up_btn').click(function (e) {
+            var $this = $(this);
+            var replyId = $this.closest('.reply_area').attr('reply_id');
+            $.ajax({
+                url: '/reply/' + replyId + '/up',
+                method: 'POST',
+            }).done(function (data) {
+                if (data.success) {
+                    $this.removeClass('invisible');
+                    var currentCount = Number($this.next('.up-count').text().trim()) || 0;
+                    if (data.action === 'up') {
+                        $this.next('.up-count').text(currentCount + 1);
+                        $this.addClass('uped');
+                    } else {
+                        if (data.action === 'down') {
+                            $this.next('.up-count').text(currentCount - 1);
+                            $this.removeClass('uped');
+                        }
+                    }
+                } else {
+                    alert(data.message);
+                }
+            }).fail(function (xhr) {
+                if (xhr.status === 403) {
+                    alert('请先登录，登陆后即可点赞。');
+                }
+            });
+        });
+        // END 点赞
+        // 图片预览
+        (function(){
+            var $previewModal = $('#preview-modal');
+            var $previewImage = $('#preview-image');
+            var $body = $('body'); // cache
+
+            $(document).on('click', '.markdown-text img', function(e) {
+                var $img = $(this);
+                // 图片被a标签包裹时，不显示弹层
+                if ($img.parent('a').length > 0) {
+                    return;
+                }
+                showModal($img.attr('src'));
+            });
+
+            $previewModal.on('click', hideModal);
+
+            $previewModal.on('hidden.bs.modal', function() {
+                // 在预览框消失之后恢复 body 的滚动能力
+                $body.css('overflow-y', 'scroll');
+            })
+
+            $previewModal.on('shown.bs.modal', function() {
+                // 修复上次滚动留下的痕迹,可能会导致短暂的闪烁，不过可以接受
+                // TODO: to be promote
+                $previewModal.scrollTop(0);
+            })
+
+            function showModal(src) {
+                $previewImage.attr('src', src);
+                $previewModal.modal('show');
+                // 禁止 body 滚动
+                $body.css('overflow-y', 'hidden');
+            }
+
+            function hideModal() {
+                $previewModal.modal('hide');
+            }
+
+        })()
+        // END 图片预览
+    </script>
+
+</div>
+<div id="backtotop" style="top: 694px; right: 0px;">回到顶部</div>
+<div id="footer">
+    <div id="footer_main">
+        <div class="links">
+            <a class="dark" href="/rss">RSS</a>
+            |
+            <a class="dark" href="https://github.com/cnodejs/nodeclub/">源码地址</a>
+        </div>
+
+        <div class="col_fade">
+
+            <p>CNode 社区为国内最专业的 Node.js 开源技术社区，致力于 Node.js 的技术研究。</p>
+            <p>服务器赞助商为
+                <a href="http://www.ucloud.cn/?utm_source=zanzhu&amp;utm_campaign=cnodejs&amp;utm_medium=display&amp;utm_content=yejiao&amp;ytag=cnodejs_logo" target="_blank" class="sponsor_outlink" data-label="ucloud_bottom">
+                    <img src="//dn-cnode.qbox.me/FuIpEaM9bvsZKnQ3QfPtBHWQmLM9" title="ucloud" alt="ucloud" width="92px">
+                </a>
+                ，存储赞助商为
+                <a href="http://www.qiniu.com/?ref=cnode" target="_blank" class="sponsor_outlink" data-label="qiniu_bottom">
+                    <img src="//dn-cnode.qbox.me/Fg0jtDIcTqVC049oVu5-sn6Om4NX" title="七牛云存储" alt="七牛云存储" width="115px">
+                </a>
+                ，由<a href="https://www.aliyun.com/product/nodejs?ref=cnode" target="_blank" class="sponsor_outlink" data-label="alinode_bottom">
+                    <img src="//dn-cnode.qbox.me/FpMZk31PDyxkC8yStmMQL4XroaGD" title="alinode" alt="alinode" height="54px" width="166px">
+                </a>提供应用性能服务。
+            </p>
+            <p>新手搭建 Node.js 服务器，推荐使用无需备案的 <a href="https://www.digitalocean.com/?refcode=eba02656eeb3">DigitalOcean(https://www.digitalocean.com/)</a></p>
+        </div>
+
+
+    </div>
+</div>
+<div id="sidebar-mask"></div>
+</body>
+</html>

@@ -10,8 +10,8 @@ const GET = function (options) {
     };
     return new Promise((resolve, reject) => {
         const req = https.request(reqOptions, (res) => {
-            console.log(`状态码: ${res.statusCode}`);
-            console.log(`响应头: ${JSON.stringify(res.headers)}`);
+            // console.log(`状态码: ${res.statusCode}`);
+            // console.log(`响应头: ${JSON.stringify(res.headers)}`);
             let resData = '';
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
@@ -39,6 +39,12 @@ const api = {
         return GET({
             hostname: hostname,
             path: '/api/v1/topics?' + querystring.stringify(options)
+        });
+    },
+    getTopic(id) {
+        return GET({
+            hostname: hostname,
+            path: '/api/v1/topic/' + id
         });
     }
 };
