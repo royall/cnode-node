@@ -253,17 +253,17 @@
         <div class="panel">
             <div class="header">
 
-                <a href="/?tab=all" class="topic-tab current-tab">全部</a>
+                <a href="/?tab=all" class="topic-tab <%= tab === 'all' ? 'current-tab' : '' %>">全部</a>
 
-                <a href="/?tab=good" class="topic-tab ">精华</a>
+                <a href="/?tab=good" class="topic-tab <%= tab === 'good' ? 'current-tab' : '' %>">精华</a>
 
-                <a href="/?tab=share" class="topic-tab ">分享</a>
+                <a href="/?tab=share" class="topic-tab <%= tab === 'share' ? 'current-tab' : '' %>">分享</a>
 
-                <a href="/?tab=ask" class="topic-tab ">问答</a>
+                <a href="/?tab=ask" class="topic-tab <%= tab === 'ask' ? 'current-tab' : '' %>">问答</a>
 
-                <a href="/?tab=job" class="topic-tab ">招聘</a>
+                <a href="/?tab=job" class="topic-tab <%= tab === 'job' ? 'current-tab' : '' %>">招聘</a>
 
-                <a href="/?tab=dev" class="topic-tab ">客户端测试</a>
+                <a href="/?tab=dev" class="topic-tab <%= tab === 'dev' ? 'current-tab' : '' %>">客户端测试</a>
 
             </div>
 
@@ -273,8 +273,7 @@
                     <div class='cell'>
 
                         <a class="user_avatar pull-left" href="/user/<%= data[i].author.loginname %>">
-                            <img src="<%= data[i].author.avatar_url %>" title="<%= data[i].author.loginname %>"/>
-                        </a>
+                            <img src="<%= data[i].author.avatar_url %>" title="<%= data[i].author.loginname %>"/> </a>
 
                         <span class="reply_count pull-left">
     <span class="count_of_replies" title="回复数">
@@ -291,12 +290,11 @@
                             <img class="user_small_avatar" src="https://avatars1.githubusercontent.com/u/13469073?v=4&amp;s=120">
                             <span class="last_active_time"><%= data[i].last_reply_at %></span> </a>
 
-
                         <div class="topic_title_wrapper">
 
-
-                            <span class='put_top'>置顶</span>
-
+                            <% if((data[i].top || data[i].good) || (tab === 'all' || tab === 'good')){ %>
+                            <span class='<%= data[i].top || data[i].good ? 'put_top' : 'topiclist-tab' %>'><%= data[i].top ? '置顶' : (data[i].good ? '精华' : utils.getTabName(data[i].tab)) %></span>
+                            <% } %>
 
                             <a class='topic_title' href='/topic/<%= data[i].id %>' title='<%= data[i].title %>'> <%= data[i].title %> </a>
                         </div>
@@ -305,33 +303,24 @@
                 </div>
 
 
-                <div class='pagination' current_page='1'>
+                <div class='pagination' current_page='<%= page %>'>
                     <ul>
-
-
+                        <% if(page == 1){ %>
                         <li class='disabled'><a>«</a></li>
-
-
-                        <li class='disabled'><a>1</a></li>
-
-
-                        <li><a href='/?tab=all&amp;page=2'>2</a></li>
-
-
-                        <li><a href='/?tab=all&amp;page=3'>3</a></li>
-
-
-                        <li><a href='/?tab=all&amp;page=4'>4</a></li>
-
-
-                        <li><a href='/?tab=all&amp;page=5'>5</a></li>
-
-
+                        <% }else{ %>
+                        <li><a href="/?tab=<%= tab %>&amp;page=<%= page - 1 %>">«</a></li>
+                        <% } %>
+                        <% if(page > 3){ %>
                         <li><a>...</a></li>
+                        <% } %>
+                        <% let s = (Number(page) - 2 < 1 ? 1 : Number(page) - 2),
+                                e = s + 5; for(let i = s;i < e;i++){ %>
+                        <li class="<%= i == page ? 'active disabled' : '' %>">
+                            <a href='/?tab=<%= tab %>&amp;page=<%= i %>'><%= i %></a></li>
 
-
-                        <li><a href='/?tab=all&amp;page=95'>»</a></li>
-
+                        <% } %>
+                        <li><a>...</a></li>
+                        <li><a href="/?tab=<%= tab %>&amp;page=<%= Number(page) + 1 %>">»</a></li>
                     </ul>
                 </div>
                 <script>

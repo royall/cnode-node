@@ -4,6 +4,8 @@ const querystring = require('querystring');
 const api = require('../common/api');
 const mime = require('../common/mime');
 const config = require('../config');
+const utils = require('../common/utils');
+const _ = require('underscore');
 
 const tplPath = config.templatePath + '/index.ejs';
 
@@ -22,7 +24,13 @@ const topics = function (req, res) {
         res.writeHead(200, {
             'Content-Type': mime.html
         });
-        ejs.renderFile(tplPath, JSON.parse(data), function (err, str) {
+        let tplData=JSON.parse(data);
+        _.extend(tplData,{
+            tab,
+            page,
+            utils
+        });
+        ejs.renderFile(tplPath, tplData, function (err, str) {
             if (err) {
                 console.log('ejs error', err);
             } else {
